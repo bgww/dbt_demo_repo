@@ -12,7 +12,9 @@
     type: triggered
     triggers:
       schedule:
-        frequency: never
+        frequency: daily
+        hour: 14
+        minute: 0
   destination:
     connection_identifier: destination:salesforce-marketing-cloud-census-test
     object_identifier: data_extension:996E64DD-69DD-496E-A8B3-7AB678591473
