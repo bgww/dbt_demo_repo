@@ -1,0 +1,20 @@
+---
+dataset:person:
+  type: sql
+  name: People
+  query: |-
+    SELECT
+        *,
+        CASE
+            WHEN SUBSTR(user_id, -1) IN ('0', '1') THEN 'Bespoke Flexi'
+            WHEN SUBSTR(user_id, -1) IN ('2', '3') THEN 'Bespoke Contract'
+            WHEN SUBSTR(user_id, -1) IN ('4', '5') THEN 'Bespoke Family'
+            WHEN SUBSTR(user_id, -1) IN ('6', '7') THEN 'Bespoke SIM-only'
+            WHEN SUBSTR(user_id, -1) IN ('8', '9') THEN 'Prepaid'
+            ELSE NULL -- Handle cases where user_id doesn't end with a number
+        END AS plan_type,
+        uniform(1, 180::number(10,0), RANDOM()) AS days_until_renewal
+    FROM DATA_FOR_CENSUS.USERS;
+  description: ''
+  icon: "emoji:\U0001F464"
+  connection: data_warehouse:snowflake-1

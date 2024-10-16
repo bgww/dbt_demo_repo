@@ -1,0 +1,14 @@
+---
+dataset:purchase-events:
+  type: sql
+  name: Churn Events
+  query: |-
+    SELECT
+        EVENT_ID,
+        'Churn' as EVENT_TYPE,
+        USER_ID,
+        TIMESTAMP
+    FROM DATA_FOR_CENSUS.PURCHASE_EVENTS
+  description:
+  icon: "emoji:\U0001F4B3"
+  connection: data_warehouse:snowflake-1

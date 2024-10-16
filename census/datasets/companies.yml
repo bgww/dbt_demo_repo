@@ -1,0 +1,20 @@
+---
+dataset:companies:
+  type: sql
+  name: Accounts
+  query: |-
+    SELECT
+        company_id,
+        company_name,
+        domain,
+        employee_size,
+        CASE
+            WHEN SUBSTR(company_id, -1) IN ('0', '1', '6', '7', '8') THEN 'Safety'
+            WHEN SUBSTR(company_id, -1) IN ('2', '3') THEN 'Logistics'
+            WHEN SUBSTR(company_id, -1) IN ('4', '5', '9') THEN 'Transportation'
+            ELSE NULL -- Handle cases where user_id doesn't end with a number
+        END AS industry_type
+    FROM DATA_FOR_CENSUS.COMPANIES
+  description:
+  icon: "emoji:\U0001F3E2"
+  connection: data_warehouse:snowflake-1

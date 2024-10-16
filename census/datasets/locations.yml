@@ -1,0 +1,8 @@
+---
+dataset:locations:
+  type: sql
+  name: Store Locations
+  query: SELECT * FROM DATA_FOR_CENSUS.ZIP_GEO_LOCATIONS
+  description:
+  icon: "emoji:\U0001F30E"
+  connection: data_warehouse:snowflake-1

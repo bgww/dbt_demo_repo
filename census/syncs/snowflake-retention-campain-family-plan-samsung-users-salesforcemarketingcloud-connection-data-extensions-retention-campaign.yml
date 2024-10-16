@@ -1,0 +1,135 @@
+---
+? sync:snowflake-retention-campain-family-plan-samsung-users-salesforcemarketingcloud-connection-data-extensions-retention-campaign
+: paused: false
+  behavior:
+    operation: upsert
+  mapping_configuration:
+    sync_all_source_columns:
+      enabled: true
+      mode: add_only
+    name_normalization: match_source_names
+  mode:
+    type: triggered
+    triggers:
+      schedule:
+        frequency: never
+  destination:
+    connection_identifier: destination:salesforce-marketing-cloud-census-test
+    object_identifier: data_extension:996E64DD-69DD-496E-A8B3-7AB678591473
+  source:
+    type: segment
+    connection_identifier: data_warehouse:snowflake-1
+    object_identifier: segment:retention-campain-family-plan-samsung-users
+  mappings:
+  - from:
+      type: column
+      data:
+        column_name: USER_ID
+    to:
+      field_name: id
+    is_primary_identifier: true
+  - from:
+      type: column
+      data:
+        column_name: CITY
+    to:
+      field_name: CITY
+  - from:
+      type: column
+      data:
+        column_name: COMPANY_ID
+    to:
+      field_name: COMPANY_ID
+  - from:
+      type: column
+      data:
+        column_name: DATE_OF_BIRTH
+    to:
+      field_name: DATE_OF_BIRTH
+  - from:
+      type: column
+      data:
+        column_name: DAYS_UNTIL_RENEWAL
+    to:
+      field_name: DAYS_UNTIL_RENEWAL
+  - from:
+      type: column
+      data:
+        column_name: DOMAIN
+    to:
+      field_name: DOMAIN
+  - from:
+      type: column
+      data:
+        column_name: EMAIL
+    to:
+      field_name: EMAIL
+  - from:
+      type: column
+      data:
+        column_name: FIRST_NAME
+    to:
+      field_name: FIRST_NAME
+  - from:
+      type: column
+      data:
+        column_name: FULL_NAME
+    to:
+      field_name: FULL_NAME
+  - from:
+      type: column
+      data:
+        column_name: IS_VIP
+    to:
+      field_name: IS_VIP
+  - from:
+      type: column
+      data:
+        column_name: JOINED_AT
+    to:
+      field_name: JOINED_AT
+  - from:
+      type: column
+      data:
+        column_name: LAST_NAME
+    to:
+      field_name: LAST_NAME
+  - from:
+      type: column
+      data:
+        column_name: PLAN_TYPE
+    to:
+      field_name: PLAN_TYPE
+  - from:
+      type: column
+      data:
+        column_name: STATE
+    to:
+      field_name: STATE
+  - from:
+      type: column
+      data:
+        column_name: ZIP
+    to:
+      field_name: ZIP
+  - from:
+      type: constant
+      data:
+        basic_type: text
+        value: abc123
+    to:
+      field_name: Campaign_id
+  advanced_configuration:
+    use_ftp_for_upload: true
+  operational_settings:
+    alerts:
+    - type: FailureAlertConfiguration
+      send_for: first_time
+      should_send_recovery: true
+      options: {}
+    - type: InvalidRecordPercentAlertConfiguration
+      send_for: first_time
+      should_send_recovery: true
+      options:
+        threshold: 75
+  sync_behavior_family: mapRecords

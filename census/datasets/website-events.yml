@@ -1,0 +1,11 @@
+---
+dataset:website-events:
+  type: sql
+  name: Website Events
+  query: |-
+    SELECT
+        *
+    FROM DATA_FOR_CENSUS.WEBSITE_EVENTS;
+  description:
+  icon: "emoji:\U0001F5B1️"
+  connection: data_warehouse:snowflake-1

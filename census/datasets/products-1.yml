@@ -1,0 +1,12 @@
+---
+dataset:products-1:
+  type: sql
+  name: Products
+  query: |-
+    SELECT
+        *
+    FROM
+        DATA_FOR_CENSUS.PRODUCTS
+  description:
+  icon: "emoji:\U0001F4E6"
+  connection: data_warehouse:snowflake-1

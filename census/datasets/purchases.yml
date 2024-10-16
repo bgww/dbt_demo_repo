@@ -1,0 +1,11 @@
+---
+dataset:purchases:
+  type: sql
+  name: Purchases
+  query: |-
+    SELECT
+        *
+    FROM DATA_FOR_CENSUS.PURCHASES
+  description:
+  icon: "emoji:\U0001F3E6"
+  connection: data_warehouse:snowflake-1

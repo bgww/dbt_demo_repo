@@ -1,0 +1,13 @@
+---
+dataset:accounts-limit-200:
+  type: sql
+  name: Accounts (Limit 200)
+  query: |-
+    SELECT
+        *
+    FROM DATA_FOR_CENSUS.COMPANIES
+    ORDER BY COMPANY_ID ASC
+    LIMIT 200;
+  description:
+  icon:
+  connection: data_warehouse:snowflake-1
