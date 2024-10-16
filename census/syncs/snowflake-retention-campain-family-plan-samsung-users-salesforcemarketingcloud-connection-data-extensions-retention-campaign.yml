@@ -61,42 +61,6 @@
   - from:
       type: column
       data:
-        column_name: EMAIL
-    to:
-      field_name: EMAIL
-  - from:
-      type: column
-      data:
-        column_name: FIRST_NAME
-    to:
-      field_name: FIRST_NAME
-  - from:
-      type: column
-      data:
-        column_name: FULL_NAME
-    to:
-      field_name: FULL_NAME
-  - from:
-      type: column
-      data:
-        column_name: IS_VIP
-    to:
-      field_name: IS_VIP
-  - from:
-      type: column
-      data:
-        column_name: JOINED_AT
-    to:
-      field_name: JOINED_AT
-  - from:
-      type: column
-      data:
-        column_name: LAST_NAME
-    to:
-      field_name: LAST_NAME
-  - from:
-      type: column
-      data:
         column_name: PLAN_TYPE
     to:
       field_name: PLAN_TYPE
@@ -132,4 +96,3 @@
       should_send_recovery: true
       options:
         threshold: 75
-  sync_behavior_family: mapRecords
