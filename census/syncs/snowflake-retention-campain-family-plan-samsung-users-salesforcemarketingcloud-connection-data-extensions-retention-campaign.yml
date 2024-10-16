@@ -93,6 +93,10 @@
       send_for: first_time
       should_send_recovery: true
       options: {}
+    - type: FailureAlertConfiguration
+      send_for: first_time
+      should_send_recovery: true
+      options: {}
     - type: InvalidRecordPercentAlertConfiguration
       send_for: first_time
       should_send_recovery: true
